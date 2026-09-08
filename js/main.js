@@ -44,12 +44,23 @@ filterBtns.forEach(btn => {
   }
 })();
 
-// Newsletter form
-// Backend pending: wire to email provider / Formspree when ready
+// --- Beehiiv newsletter (TODO) ---
+// Paste your Beehiiv publication embed when ready. Do NOT invent a fake form URL.
+// Setup steps: see /BEEHIIV-SETUP.md
+const BEEHIIV_EMBED_URL = null; // TODO: replace with Beehiiv embed/script setup (not a fake action URL)
+const BEEHIIV_EMBED_CONNECTED = false; // set true after Beehiiv embed is live on the site
+
+// Newsletter form — pending Beehiiv connection
 const nlForm = document.querySelector('.newsletter-form');
 if (nlForm) {
   nlForm.addEventListener('submit', e => {
     e.preventDefault();
+    if (!BEEHIIV_EMBED_CONNECTED || !BEEHIIV_EMBED_URL) {
+      showToast('List coming soon — Beehiiv setup pending');
+      return;
+    }
+    // When connected via custom form + API proxy, submit here.
+    // Preferred: replace the form with Beehiiv's official embed script (see BEEHIIV-SETUP.md).
     const email = nlForm.querySelector('input').value;
     if (email) {
       showToast('🌿 Thanks for joining! Check your inbox.');

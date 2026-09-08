@@ -161,7 +161,7 @@
             <span class="toxin-tag">Parabens</span>
             <span class="toxin-tag">Phthalates</span>
           </div>
-          <a href="https://www.amazon.com/s?k=innersense+organic+shampoo&tag=cleanswapsh07-20" target="_blank" rel="noopener sponsored" class="swap-btn">Shop the Swap →</a>
+          <a href="https://www.amazon.com/dp/B074Q2CNMY/?tag=cleanswapsh07-20" target="_blank" rel="noopener sponsored" class="swap-btn">Shop the Swap →</a>
         </div>
       </div>
 
@@ -196,8 +196,14 @@
 <section class="newsletter">
   <h2>🌱 Get Weekly Swap Ideas</h2>
   <p>New clean alternatives, ingredient alerts, and exclusive deals — straight to your inbox.</p>
-  <!-- Backend pending: connect newsletter to email provider when ready -->
-  <form class="newsletter-form">
+  <!--
+    Beehiiv setup (do not invent a fake form action URL):
+    1) Create free Beehiiv publication
+    2) Subscribers → Subscribe forms → Create form (Slim + Inline recommended)
+    3) Save & get embed code → paste script here (or see BEEHIIV-SETUP.md)
+    4) Set BEEHIIV_EMBED_CONNECTED = true in js/main.js
+  -->
+  <form class="newsletter-form" data-beehiiv-pending="true" action="#" method="post">
     <input type="email" placeholder="your@email.com" required />
     <button type="submit">Subscribe Free</button>
   </form>
