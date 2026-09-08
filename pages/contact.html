@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – The Clean Swap Shop</title>
+  <meta name="description" content="Get in touch with The Clean Swap Shop. Suggest a swap, ask a question, or partner with us." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-icon">🌿</span>
+      <div class="logo-text">The Clean Swap Shop<span>Natural Alternatives</span></div>
+    </a>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="swaps.html">All Swaps</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="swaps.html" class="cta-btn">Find Your Swap →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1>💬 Get In Touch</h1>
+  <p>Have a swap idea? A question? Want to partner with us? We'd love to hear from you.</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<div class="contact-section">
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+    <div class="value-card">
+      <div class="v-icon">💡</div>
+      <h3>Suggest a Swap</h3>
+      <p>Know a toxic product that needs a cleaner alternative? Tell us and we'll research it!</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">🤝</div>
+      <h3>Brand Partnerships</h3>
+      <p>Are you a clean brand that wants to be featured? Reach out and let's talk.</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">❓</div>
+      <h3>General Questions</h3>
+      <p>Ask anything about our recommendations, ingredients, or affiliate links.</p>
+    </div>
+    <div class="value-card">
+      <div class="v-icon">📣</div>
+      <h3>Media & Press</h3>
+      <p>Journalists and bloggers welcome. We're happy to comment on clean living topics.</p>
+    </div>
+  </div>
+
+  <!-- Backend pending: wire contact form to Formspree / email endpoint when ready -->
+  <form class="contact-form">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Jane Smith" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="jane@email.com" required />
+    </div>
+    <div class="form-group">
+      <label for="subject">What's This About?</label>
+      <select id="subject">
+        <option value="">Select a topic...</option>
+        <option>Suggest a Swap</option>
+        <option>Brand / Partnership Inquiry</option>
+        <option>Question About a Product</option>
+        <option>Media / Press</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
+    </div>
+    <button type="submit" class="form-submit">Send Message 🌿</button>
+  </form>
+
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>🌱 Get Weekly Swap Ideas</h2>
+  <p>New clean alternatives, ingredient alerts, and exclusive deals — straight to your inbox.</p>
+  <!-- Backend pending: connect newsletter to email provider when ready -->
+  <form class="newsletter-form">
+    <input type="email" placeholder="your@email.com" required />
+    <button type="submit">Subscribe Free</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="affiliate-disclosure">
+      <strong>Affiliate Disclosure:</strong> The Clean Swap Shop participates in affiliate programs. When you click our links and make a purchase, we may earn a small commission at no extra cost to you. We only recommend products we genuinely believe in.
+    </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">
+          <span class="logo-icon">🌿</span>
+          <div class="logo-text">The Clean Swap Shop<span>Natural Alternatives</span></div>
+        </a>
+        <p>Helping families swap toxic everyday products for safe, natural alternatives — one swap at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Swaps</h4>
+        <ul>
+          <li><a href="swaps.html?cat=kitchen">Kitchen & Cleaning</a></li>
+          <li><a href="swaps.html?cat=beauty">Personal Care</a></li>
+          <li><a href="swaps.html?cat=baby">Baby & Kids</a></li>
+          <li><a href="swaps.html?cat=food">Food & Drinks</a></li>
+          <li><a href="swaps.html?cat=cookware">Kitchenware</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="disclosure.html">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Clean Swap Shop. All rights reserved.</span>
+      <span>Made with 🌿 for a healthier planet</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl508943'},{'dcenter':'p3'},{'cp_id':'10882255'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
