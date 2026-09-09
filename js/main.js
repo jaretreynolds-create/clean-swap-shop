@@ -59,23 +59,9 @@ filterBtns.forEach((btn) => {
   }
 })();
 
-// Newsletter form — Beehiiv wiring pending (no live endpoint yet)
-const BEEHIIV_EMBED_CONNECTED = false;
-const nlForm = document.querySelector('.newsletter-form');
-if (nlForm) {
-  nlForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = nlForm.querySelector('input')?.value;
-    if (!email) return;
-    if (!BEEHIIV_EMBED_CONNECTED) {
-      showToast('🌿 Thanks — newsletter signup connects soon.');
-      nlForm.reset();
-      return;
-    }
-    showToast('🌿 Thanks for joining! Check your inbox.');
-    nlForm.reset();
-  });
-}
+// Newsletter — Beehiiv embed is live (iframe on pages). No custom form/toast.
+const BEEHIIV_EMBED_CONNECTED = true;
+// Pending toast handler removed: .newsletter-form elements were replaced by the Beehiiv embed.
 
 // Contact form — Web3Forms / Formspree / mailto (see FORMSPREE-SETUP.md)
 // Paste a real Web3Forms UUID here after signup. Leave empty to read the form field.

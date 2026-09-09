@@ -1,6 +1,6 @@
 # Beehiiv drafts — Welcome + Week 1
 
-> **Drafts only.** Beehiiv is **not** connected yet (see `/workspace/cleanswapshop/BEEHIIV-SETUP.md`). Site forms still show list-pending. Paste these into Beehiiv **after** the account/embed is connected. **Do not claim the list is live** in public posts or on-site copy until `BEEHIIV_EMBED_CONNECTED` is true and a real signup test succeeds.
+> **Embed connected.** The Beehiiv subscribe embed is live on the site (`BEEHIIV_EMBED_CONNECTED = true`; see `BEEHIIV-SETUP.md`). These are still **drafts to paste** into Beehiiv for welcome / Week 1 emails — paste them in the Beehiiv dashboard. Confirm a real signup lands in Beehiiv before heavy promotion.
 
 **Affiliate reminder:** Amazon Associates tag `cleanswapsh0a-20`. Include a short disclosure in every email that links to Amazon.
 
@@ -102,4 +102,4 @@ https://www.cleanswapshop.com
 
 ---
 
-*End of Beehiiv drafts. Paste after Beehiiv account + embed are connected. Do not announce “list is live” until setup is complete.*
+*End of Beehiiv drafts. Site embed is connected — paste these into Beehiiv for welcome/Week 1 emails. Confirm a test subscriber appears before heavy list promotion.*

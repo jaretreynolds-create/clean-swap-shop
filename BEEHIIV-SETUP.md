@@ -1,25 +1,24 @@
 # Beehiiv Newsletter Setup (Clean Swap Shop)
 
-The site newsletter UI is ready. Forms do **not** post to a fake Beehiiv URL. Until you connect Beehiiv, submit shows: *“List coming soon — Beehiiv setup pending”*.
+**Status (live):** The Beehiiv subscribe embed is connected sitewide (form ID `d8f7debc-1541-4519-9b00-c5c33d08daf8`). Pages load the standard `subscribe-forms.beehiiv.com` script + iframe inside each `.newsletter` section. `BEEHIIV_EMBED_CONNECTED = true` in `js/main.js`. Publication title in Beehiiv may still show as “Jaret's Newsletter” — that is OK for the embed.
 
-## What Jaret must do
+## What is already done
 
-1. Create a free Beehiiv account at https://www.beehiiv.com and create a publication (e.g. “Clean Swap Shop”).
-2. In Beehiiv: **Subscribers → Subscribe forms → Create new form**.
-3. Prefer a **Slim** + **Inline** embed (email + Subscribe) to match the existing site form, or **Regular** if you want a title/subtitle.
-4. Style colors to match the site greens if desired; save the form.
-5. Click **Save & get embed code** → copy the single `<script>…</script>` tag Beehiiv provides.
-6. On this site, replace each newsletter section (`index.html`, `pages/swaps.html`, and any other page with `.newsletter-form`) with either:
-   - The Beehiiv embed script inside the `.newsletter` section, **or**
-   - Keep the custom form and wire it via Beehiiv API (advanced — needs publication ID + API key; do not put secrets in front-end JS).
-7. In `js/main.js`, set `BEEHIIV_EMBED_CONNECTED = true` after the embed is live (or remove the pending toast handler if you delete the custom form).
-8. Test signup with a real email; confirm the subscriber appears in Beehiiv.
+1. Free Beehiiv account + subscribe form created.
+2. Embed code placed on homepage, swaps, about, contact, and all guide pages (heading/copy kept; fake pending forms removed).
+3. Fake “connects soon” toast / `data-beehiiv-pending` forms removed.
 
-## Code hooks already in the repo
+## Still for Jaret (in Beehiiv dashboard)
 
-- Top of `js/main.js`: `BEEHIIV_EMBED_URL` / `BEEHIIV_EMBED_CONNECTED` TODO constants.
-- Newsletter `<form>` elements use `data-beehiiv-pending="true"` and an HTML comment with these steps.
-- Do **not** invent a form `action` URL — Beehiiv’s standard path is the **embed script**, not a public POST action that you paste as a fake URL.
+1. Paste welcome + Week 1 email drafts from `content/beehiiv-welcome-and-week1.md` into Beehiiv automations / posts.
+2. Optionally rename the publication from “Jaret's Newsletter” to “Clean Swap Shop” (cosmetic).
+3. Test signup with a real email; confirm the subscriber appears in Beehiiv.
+4. Style form colors in Beehiiv if you want a closer match to site greens.
+
+## Do not
+
+- Invent API keys or fake form `action` URLs.
+- Put Beehiiv API secrets in front-end JS (API subscriptions are server-side only).
 
 ## Official docs
 
