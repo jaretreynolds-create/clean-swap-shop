@@ -17,6 +17,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.cleanswapshop.com/pages/guides/laundry-detergent-mollys-suds.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cleanswapshop.com/pages/guides/nonstick-vs-cast-iron.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cleanswapshop.com/pages/guides/deodorant-native-vs-conventional.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.cleanswapshop.com/pages/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
