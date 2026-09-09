@@ -77,13 +77,128 @@ if (nlForm) {
   });
 }
 
-// Contact form — backend pending
+// Contact form — Web3Forms / Formspree / mailto (see FORMSPREE-SETUP.md)
+// Paste a real Web3Forms UUID here after signup. Leave empty to read the form field.
+const WEB3FORMS_ACCESS_KEY = '';
+// Optional Formspree endpoint, e.g. https://formspree.io/f/xxxxxxxx
+const FORMSPREE_ENDPOINT = '';
+const CONTACT_EMAIL = 'contact@cleanswapshop.com';
+const PLACEHOLDER_KEYS = new Set(['', 'YOUR_ACCESS_KEY_HERE', 'your_access_key_here']);
+
+function isWeb3FormsKey(key) {
+  return typeof key === 'string' && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(key.trim());
+}
+
+function resolveWeb3Key(form) {
+  const fromConst = (WEB3FORMS_ACCESS_KEY || '').trim();
+  if (isWeb3FormsKey(fromConst)) return fromConst;
+  const field = form.querySelector('input[name="access_key"]');
+  const fromField = (field?.value || '').trim();
+  if (isWeb3FormsKey(fromField) && !PLACEHOLDER_KEYS.has(fromField)) return fromField;
+  return '';
+}
+
+function openMailtoFallback(data) {
+  const topic = data.topic || 'General';
+  const subject = encodeURIComponent(`[Clean Swap Shop] ${topic}`);
+  const body = encodeURIComponent(
+    `Name: ${data.name}\nEmail: ${data.email}\nTopic: ${topic}\n\n${data.message}`
+  );
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+}
+
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    showToast("✅ Message noted — we'll be in touch soon.");
-    contactForm.reset();
+    const name = contactForm.querySelector('[name="name"]')?.value?.trim() || '';
+    const email = contactForm.querySelector('[name="email"]')?.value?.trim() || '';
+    const topic = contactForm.querySelector('[name="topic"]')?.value?.trim() || '';
+    const message = contactForm.querySelector('[name="message"]')?.value?.trim() || '';
+    if (!name || !email || !message) {
+      showToast('Please fill in name, email, and message.');
+      return;
+    }
+
+    const btn = contactForm.querySelector('[type="submit"]');
+    const setBusy = (busy) => {
+      if (!btn) return;
+      btn.disabled = busy;
+      btn.textContent = busy ? 'Sending…' : 'Send Message 🌿';
+    };
+
+    const w3Subject = contactForm.querySelector('#w3-subject');
+    if (w3Subject) {
+      w3Subject.value = topic
+        ? `Clean Swap Shop: ${topic}`
+        : 'New message from Clean Swap Shop';
+    }
+
+    const accessKey = resolveWeb3Key(contactForm);
+    const formspree = (FORMSPREE_ENDPOINT || '').trim();
+
+    // Prefer Web3Forms when a real key is present
+    if (accessKey) {
+      setBusy(true);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name,
+            email,
+            topic,
+            message,
+            subject: w3Subject?.value || 'New message from Clean Swap Shop',
+            from_name: 'Clean Swap Shop Contact',
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) {
+          showToast("✅ Message sent — we'll reply soon.");
+          contactForm.reset();
+        } else {
+          showToast('Send failed — opening email instead.');
+          openMailtoFallback({ name, email, topic, message });
+        }
+      } catch (err) {
+        showToast('Network error — opening email instead.');
+        openMailtoFallback({ name, email, topic, message });
+      } finally {
+        setBusy(false);
+      }
+      return;
+    }
+
+    // Formspree if endpoint configured
+    if (formspree.startsWith('https://formspree.io/')) {
+      setBusy(true);
+      try {
+        const res = await fetch(formspree, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ name, email, topic, message, _subject: `Clean Swap Shop: ${topic || 'Contact'}` }),
+        });
+        if (res.ok) {
+          showToast("✅ Message sent — we'll reply soon.");
+          contactForm.reset();
+        } else {
+          showToast('Send failed — opening email instead.');
+          openMailtoFallback({ name, email, topic, message });
+        }
+      } catch (err) {
+        showToast('Network error — opening email instead.');
+        openMailtoFallback({ name, email, topic, message });
+      } finally {
+        setBusy(false);
+      }
+      return;
+    }
+
+    // No live endpoint yet — honest mailto fallback (works without API keys)
+    showToast('Opening your email app to contact@cleanswapshop.com…');
+    openMailtoFallback({ name, email, topic, message });
   });
 }
 

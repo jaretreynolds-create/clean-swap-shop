@@ -63,19 +63,24 @@
     </div>
   </div>
 
-  <!-- Backend pending: wire contact form to Formspree / email endpoint when ready -->
-  <form class="contact-form">
+  <!-- Contact backend: Web3Forms preferred (see FORMSPREE-SETUP.md). Until access_key is a real UUID, JS uses mailto fallback — no fake success. -->
+  <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+    <input type="hidden" name="from_name" value="Clean Swap Shop Contact" />
+    <input type="hidden" name="subject" id="w3-subject" value="New message from Clean Swap Shop" />
+    <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
     <div class="form-group">
       <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="Jane Smith" required />
+      <input type="text" id="name" name="name" placeholder="Jane Smith" required />
     </div>
     <div class="form-group">
       <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="you@email.com" required />
+      <input type="email" id="email" name="email" placeholder="you@email.com" required />
     </div>
     <div class="form-group">
-      <label for="subject">What's This About?</label>
-      <select id="subject">
+      <label for="topic">What's This About?</label>
+      <select id="topic" name="topic">
         <option value="">Select a topic...</option>
         <option>Suggest a Swap</option>
         <option>Brand / Partnership Inquiry</option>
@@ -86,9 +91,10 @@
     </div>
     <div class="form-group">
       <label for="message">Your Message</label>
-      <textarea id="message" placeholder="Tell us what's on your mind..." required></textarea>
+      <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
     </div>
     <button type="submit" class="form-submit">Send Message 🌿</button>
+    <p class="form-note" id="contact-form-note">Prefer email? Write us anytime at <a href="mailto:contact@cleanswapshop.com">contact@cleanswapshop.com</a>. In-page delivery activates after you paste a free Web3Forms key (see <code>FORMSPREE-SETUP.md</code>).</p>
   </form>
 
 </div>
