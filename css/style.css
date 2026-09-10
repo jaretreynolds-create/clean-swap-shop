@@ -444,11 +444,11 @@ nav {
 }
 
 .swap-side-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .swap-side-name {
@@ -1250,6 +1250,291 @@ footer {
   .swap-grid { grid-template-columns: 1fr; gap: 1.15rem; }
   .cat-grid { grid-template-columns: 1fr 1fr; gap: 0.85rem; }
   .cat-card { padding: 1.25rem 0.85rem; }
+}
+
+/* ── CHIP STRIP ── */
+.chip-strip {
+  background: var(--paper);
+  border-bottom: 1px solid rgba(212, 184, 150, 0.4);
+  padding: 0.95rem 0;
+}
+
+.chip-strip-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  flex-wrap: nowrap;
+}
+
+.cat-chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.05rem;
+  border-radius: var(--radius-pill);
+  background: var(--cream);
+  border: 1.5px solid rgba(212, 184, 150, 0.65);
+  color: var(--text-body);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.cat-chip:hover {
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cat-chip-all {
+  background: rgba(197, 106, 74, 0.1);
+  border-color: rgba(197, 106, 74, 0.4);
+  color: var(--terracotta-deep);
+}
+
+.cat-chip-all:hover {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: #fff;
+}
+
+/* ── HOW IT WORKS ── */
+.how-it-works {
+  padding: clamp(3.25rem, 7vw, 5.25rem) 1.5rem;
+  background: linear-gradient(180deg, var(--warm-white) 0%, var(--cream) 100%);
+}
+
+.how-inner { max-width: 1160px; margin: 0 auto; }
+
+.how-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.15rem;
+  counter-reset: how;
+}
+
+.how-step {
+  background: var(--paper);
+  border: 1px solid rgba(212, 184, 150, 0.42);
+  border-radius: 20px;
+  padding: 1.45rem 1.25rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.how-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--sage-dark);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.how-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  color: var(--brown);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.015em;
+}
+
+.how-step p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── FEATURED / SKIP-SWAP POLISH ── */
+.featured-swaps .section-cta-wrap,
+.section-cta-wrap {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.skip-swap-card .swap-from {
+  background: linear-gradient(180deg, #FBF0EE 0%, #F6E0DB 100%);
+}
+
+.skip-swap-card .swap-to {
+  background: linear-gradient(180deg, #EEF5EC 0%, #DCECD8 100%);
+}
+
+.swap-guide-link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.swap-guide-link:hover {
+  color: var(--terracotta);
+  border-bottom-color: rgba(197, 106, 74, 0.45);
+}
+
+/* ── TOOLS STRIP ── */
+.tools-strip {
+  padding: clamp(3.25rem, 7vw, 5rem) 1.5rem;
+  background: var(--sand);
+  position: relative;
+}
+
+.tools-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.tools-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.tools-card {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  color: var(--text-body);
+  border: 1px solid rgba(212, 184, 150, 0.45);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+}
+
+.tools-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--sage-light);
+}
+
+.tools-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tools-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--brown);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.015em;
+}
+
+.tools-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 0.55rem;
+}
+
+.tools-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+/* ── GUIDES SECTION ── */
+.guides-section {
+  padding: clamp(3.25rem, 7vw, 5rem) 1.5rem;
+  background: var(--warm-white);
+}
+
+.guides-inner { max-width: 1160px; margin: 0 auto; }
+
+.guides-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ── SWAPS PAGE HERO ACTIONS ── */
+.swaps-page-hero .hero-badge {
+  margin-bottom: 1rem;
+}
+
+.page-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-actions .btn-secondary {
+  background: rgba(255, 252, 247, 0.75);
+  padding: 0.7rem 1.35rem;
+  font-size: 0.88rem;
+}
+
+.chip-filter-bar {
+  gap: 0.65rem;
+  padding: 1.05rem 1.35rem;
+  justify-content: center;
+}
+
+.chip-filter-bar .filter-btn {
+  padding: 0.6rem 1.15rem;
+  font-size: 0.86rem;
+  box-shadow: 0 2px 8px rgba(92, 67, 54, 0.04);
+}
+
+.chip-filter-bar .filter-btn.active {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  box-shadow: 0 4px 14px rgba(197, 106, 74, 0.28);
+}
+
+@media (max-width: 900px) {
+  .how-steps { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .how-steps { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .chip-strip-inner { padding: 0 1rem; }
+  .chip-filter-bar { justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .tools-card { flex-direction: column; gap: 0.65rem; }
+  .page-hero-actions { flex-direction: column; align-items: stretch; }
+  .page-hero-actions .btn-secondary { width: 100%; }
 }
 
 /* ── QUIZ LITE ── */

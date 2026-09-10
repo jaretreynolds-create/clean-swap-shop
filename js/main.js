@@ -201,7 +201,7 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-document.querySelectorAll('.swap-card, .cat-card, .value-card').forEach((el) => {
+document.querySelectorAll('.swap-card, .cat-card, .value-card, .how-step, .tools-card').forEach((el) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(16px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

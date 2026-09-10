@@ -26,26 +26,31 @@
       <li><a href="quiz.html">Quiz</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="swaps.html" class="cta-btn">Find Your Swap →</a></li>
+      <li><a href="swaps.html" class="cta-btn">Browse Swaps →</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- PAGE HERO -->
-<section class="page-hero">
+<section class="page-hero swaps-page-hero">
+  <div class="hero-badge">Clean · Natural · Everyday swaps</div>
   <h1>Browse All Swaps</h1>
-  <p>Filter by room of the house, compare toxic vs clean, then Shop the Swap in one tap.</p>
+  <p>Filter by category, compare <strong>Skip this</strong> vs <strong>Swap to this</strong>, then shop with our tagged Amazon links — or open a guide when you want the why.</p>
+  <div class="page-hero-actions">
+    <a href="quiz.html" class="btn-secondary">Take the Quiz</a>
+    <a href="under-sink-checklist.html" class="btn-secondary">Under-Sink Checklist</a>
+  </div>
 </section>
 
 <!-- FILTER BAR -->
-<div class="filter-bar">
-  <button class="filter-btn active" data-filter="all">All Categories</button>
-  <button class="filter-btn" data-filter="kitchen">🍋 Kitchen & Cleaning</button>
-  <button class="filter-btn" data-filter="beauty">🌸 Personal Care</button>
-  <button class="filter-btn" data-filter="baby">🍼 Baby & Kids</button>
-  <button class="filter-btn" data-filter="home">🪴 Home & Garden</button>
-  <button class="filter-btn" data-filter="food">🥗 Food & Drinks</button>
-  <button class="filter-btn" data-filter="cookware">🍳 Kitchenware</button>
+<div class="filter-bar chip-filter-bar" role="toolbar" aria-label="Filter swaps by category">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="kitchen">🍋 Kitchen</button>
+  <button class="filter-btn" data-filter="beauty">🌸 Beauty</button>
+  <button class="filter-btn" data-filter="baby">🍼 Baby</button>
+  <button class="filter-btn" data-filter="home">🪴 Home</button>
+  <button class="filter-btn" data-filter="food">🥗 Food</button>
+  <button class="filter-btn" data-filter="cookware">🍳 Cookware</button>
 </div>
 
 <!-- PRODUCTS GRID -->
@@ -53,16 +58,16 @@
   <div class="swap-grid">
 
     <!-- KITCHEN -->
-            <div class="swap-card" data-cat="kitchen">
+            <div class="swap-card skip-swap-card" data-cat="kitchen">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Bleach Cleaner</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Branch Basics</strong>
           </div>
         </div>
@@ -80,16 +85,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="kitchen">
+            <div class="swap-card skip-swap-card" data-cat="kitchen">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Tide Pods</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Molly's Suds</strong>
           </div>
         </div>
@@ -106,16 +111,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="kitchen">
+            <div class="swap-card skip-swap-card" data-cat="kitchen">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Febreze Spray</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Essential Oil Diffuser</strong>
           </div>
         </div>
@@ -134,16 +139,16 @@
     </div>
 
     <!-- BEAUTY -->
-            <div class="swap-card" data-cat="beauty">
+            <div class="swap-card skip-swap-card" data-cat="beauty">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Synthetic Shampoo</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Innersense Beauty</strong>
           </div>
         </div>
@@ -161,16 +166,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="beauty">
+            <div class="swap-card skip-swap-card" data-cat="beauty">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Secret Deodorant</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Native Deodorant</strong>
           </div>
         </div>
@@ -188,16 +193,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="beauty">
+            <div class="swap-card skip-swap-card" data-cat="beauty">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Chemical Sunscreen</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Badger Mineral SPF</strong>
           </div>
         </div>
@@ -216,16 +221,16 @@
     </div>
 
     <!-- BABY -->
-            <div class="swap-card" data-cat="baby">
+            <div class="swap-card skip-swap-card" data-cat="baby">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Conventional Diapers</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Eco Pea Diapers</strong>
           </div>
         </div>
@@ -242,16 +247,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="baby">
+            <div class="swap-card skip-swap-card" data-cat="baby">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Johnson's Baby Lotion</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Earth Mama Organics</strong>
           </div>
         </div>
@@ -269,16 +274,16 @@
     </div>
 
     <!-- HOME & GARDEN -->
-            <div class="swap-card" data-cat="home">
+            <div class="swap-card skip-swap-card" data-cat="home">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Roundup Weedkiller</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Natural Weed Killer</strong>
           </div>
         </div>
@@ -294,21 +299,21 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="home">
+            <div class="swap-card skip-swap-card" data-cat="home">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Glade Plug-In</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">PURA Smart Diffuser</strong>
           </div>
         </div>
         <h3>Home Fragrance</h3>
-        <p>Plug-in air fresheners continuously emit VOCs and synthetic chemicals into your indoor air. PURA uses plant-based, EWG-verified fragrance oils.</p>
+        <p>Plug-in air fresheners continuously emit VOCs and synthetic chemicals into your indoor air. PURA uses plant-based fragrance oils you control from an app — a calmer alternative to always-on plug-ins.</p>
         <div class="toxin-tags">
           <span class="toxin-tag">VOCs</span>
           <span class="toxin-tag">Synthetic Musk</span>
@@ -321,16 +326,16 @@
     </div>
 
     <!-- FOOD & DRINKS -->
-            <div class="swap-card" data-cat="food">
+            <div class="swap-card skip-swap-card" data-cat="food">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Vegetable Oil</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Avocado Oil</strong>
           </div>
         </div>
@@ -347,16 +352,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="food">
+            <div class="swap-card skip-swap-card" data-cat="food">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Unfiltered Tap Water</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Berkey Water Filter</strong>
           </div>
         </div>
@@ -374,16 +379,16 @@
     </div>
 
     <!-- COOKWARE -->
-            <div class="swap-card" data-cat="cookware">
+            <div class="swap-card skip-swap-card" data-cat="cookware">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Teflon Non-Stick</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Lodge Cast Iron</strong>
           </div>
         </div>
@@ -401,16 +406,16 @@
       </div>
     </div>
 
-            <div class="swap-card" data-cat="cookware">
+            <div class="swap-card skip-swap-card" data-cat="cookware">
       <div class="swap-card-body">
-        <div class="swap-comparison" aria-label="Toxic product to clean swap">
+        <div class="swap-comparison" aria-label="Skip product and swap to clean alternative">
           <div class="swap-from">
-            <span class="swap-side-label">Toxic</span>
+            <span class="swap-side-label">Skip this</span>
             <strong class="swap-side-name">Plastic Containers</strong>
           </div>
           <div class="swap-arrow" aria-hidden="true">→</div>
           <div class="swap-to">
-            <span class="swap-side-label">Clean</span>
+            <span class="swap-side-label">Swap to this</span>
             <strong class="swap-side-name">Glass Storage Sets</strong>
           </div>
         </div>
